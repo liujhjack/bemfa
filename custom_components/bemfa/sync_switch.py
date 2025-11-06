@@ -21,8 +21,8 @@ from homeassistant.components.vacuum import (
     SERVICE_RETURN_TO_BASE,
     SERVICE_START,
     SERVICE_STOP,
-    STATE_CLEANING,
     VacuumEntityFeature,
+    VacuumActivity,
 )
 from homeassistant.const import (
     ATTR_SUPPORTED_FEATURES,
@@ -193,7 +193,7 @@ class Vacuum(Switch):
     ) -> Callable[[str, ReadOnlyDict[Mapping[str, Any]]], str | int]:
         return (
             lambda state, attributes: MSG_ON
-            if state in [STATE_ON, STATE_CLEANING]
+            if state in [STATE_ON, VacuumActivity.CLEANING]
             else MSG_OFF
         )
 
