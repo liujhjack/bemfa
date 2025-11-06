@@ -3,6 +3,8 @@
 修复高版本HA的mqtt版本不兼容导致的bemfa插件失效问题 25/09/10
 修复参考（https://bbs.hassbian.com/thread-29794-1-1.html）帖子和评论
 
+修复core 2025.11.0  CAMERA_DOMAIN不兼容的问题
+
 
 
 
