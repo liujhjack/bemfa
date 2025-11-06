@@ -4,7 +4,8 @@ from __future__ import annotations
 from collections.abc import Mapping, Callable
 from typing import Any
 from homeassistant.components.automation import DOMAIN as AUTOMATION_DOMAIN
-from homeassistant.components.camera import DOMAIN as CAMERA_DOMAIN, STATE_IDLE
+from homeassistant.components.camera import DOMAIN as CAMERA_DOMAIN
+from homeassistant.components.camera.const import CameraState
 from homeassistant.components.group import DOMAIN as GROUP_DOMAIN
 from homeassistant.components.humidifier import DOMAIN as HUMIDIFIER_DOMAIN
 from homeassistant.components.input_boolean import DOMAIN as INPUT_BOOLEAN_DOMAIN
@@ -148,7 +149,7 @@ class Lock(Switch):
     def _msg_generator(
         self,
     ) -> Callable[[str, ReadOnlyDict[Mapping[str, Any]]], str | int]:
-        return lambda state, attributes: MSG_OFF if state == STATE_LOCKED else MSG_ON
+        return lambda state, attributes: MSG_OFF if state == 'locked' else MSG_ON
 
     def _service_names(self) -> tuple[str, str]:
         return (SERVICE_UNLOCK, SERVICE_LOCK)
