@@ -4,8 +4,6 @@
 修复参考（https://bbs.hassbian.com/thread-29794-1-1.html）帖子和评论
 
 
-## 如果你感觉本文对你有帮助，请关注公众号
-![hacs_badge](扫码_搜索联合传播样式-标准色版.png)
 
 
 ## 功能
