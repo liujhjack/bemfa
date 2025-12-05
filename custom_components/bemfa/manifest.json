@@ -6,12 +6,12 @@
   ],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/larry-wong/bemfa",
+  "documentation": "https://github.com/liujhjack/bemfa",
   "homekit": {},
   "iot_class": "cloud_push",
-  "issue_tracker": "https://github.com/larry-wong/bemfa/issues",
+  "issue_tracker": "https://github.com/skddyj/bemfa/issues",
   "requirements": ["paho-mqtt==2.1.0"],
   "ssdp": [],
-  "version": "1.4.2",
+  "version": "1.4.3",
   "zeroconf": []
 }
