@@ -56,7 +56,26 @@ class Sensor(Sync):
         co2_sensors: dict[str, str] = {}
 
         # filter entities in our area
-        a_entities = area_entities(self._hass, self._entity_id.split(".")[1])
+        # a_entities = area_entities(self._hass, self._entity_id.split(".")[1])
+        area_id = self._entity_id.split(".")[1]
+
+        area_reg = area_registry.async_get(self._hass)
+        device_reg = self._hass.helpers.device_registry.async_get(self._hass)
+        entity_reg = self._hass.helpers.entity_registry.async_get(self._hass)
+
+        # 获取该 area 下所有 device_id
+        area_devices = [
+            device.id
+            for device in device_reg.devices.values()
+            if device.area_id == area_id
+        ]
+
+        # 获取这些设备下的所有实体
+        a_entities = {
+            entity.entity_id
+            for entity in entity_reg.entities.values()
+            if entity.device_id in area_devices
+        }
 
         for state in self._hass.states.async_all(SENSOR_DOMAIN):
             if state.entity_id not in a_entities:
