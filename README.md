@@ -5,7 +5,7 @@
 
 修复core 2025.11.0  CAMERA_DOMAIN不兼容的问题
 
-
+修复core 2025.12.0  fix:cannot import name area_entities from homeassistant.helpers.template
 
 
 ## 功能
